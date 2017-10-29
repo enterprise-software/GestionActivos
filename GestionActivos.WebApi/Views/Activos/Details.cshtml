@@ -1,0 +1,106 @@
+﻿@model GestionActivos.Dtos.ActivosDto
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalle del Activo</h2>
+
+<div>
+    <h4>Activo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroInternoInventario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroInternoInventario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alto)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alto)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ValorCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ValorCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaCompra)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaCompra)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaBaja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaBaja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreArea)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreArea)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombrePersona)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombrePersona)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NombreTipoActivo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NombreTipoActivo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

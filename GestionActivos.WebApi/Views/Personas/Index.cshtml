@@ -1,0 +1,32 @@
+﻿@model IEnumerable<GestionActivos.Dtos.PersonaDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Listado de personas</h2>
+
+<p>
+    @Html.ActionLink("Registar una persona", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DocumentoIdentidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DocumentoIdentidad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+    </tr>
+}
+
+</table>

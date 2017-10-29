@@ -1,0 +1,89 @@
+﻿@model IEnumerable<GestionActivos.Dtos.ActivosDto>
+
+@{
+    ViewBag.Title = "Activos";
+}
+
+<h2>Lista de activos</h2>
+
+<p>
+    @Html.ActionLink("Registra un nuevo activo", "Create")
+</p>
+<table class="table display" id="table_id">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroInternoInventario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorCompra)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NombreTipoActivo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCompra)
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroInternoInventario)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValorCompra)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreTipoActivo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FechaCompra)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ActivoId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ActivoId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts{
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js">
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#table_id').DataTable({
+                "columnsDefs": [
+                    { "searchable": false, "targets": 0 },
+                    { "searchable": false, "targets": 1 },
+                    { "searchable": false, "targets": 2 },
+                    { "searchable": false, "targets": 4 }
+                ]
+            });
+        });
+    </script>
+}

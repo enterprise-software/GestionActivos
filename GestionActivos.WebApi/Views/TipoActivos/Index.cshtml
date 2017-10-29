@@ -1,0 +1,32 @@
+﻿@model IEnumerable<GestionActivos.Dtos.TipoActivosDto>
+
+@{
+    ViewBag.Title = "Tipos de activo";
+}
+
+<h2>Listado de los tipos de activo</h2>
+
+<p>
+    @Html.ActionLink("Crear un nuevo tipo de activo", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<GestionActivos.Dtos.CiudadDto>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de ciudades</h2>
+
+<p>
+    @Html.ActionLink("Registar una ciudad", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+    </tr>
+}
+</table>

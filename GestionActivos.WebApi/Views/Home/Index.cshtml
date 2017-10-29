@@ -1,0 +1,56 @@
+﻿<div class="jumbotron">
+    <h1>Gestione sus activos</h1>
+    <p class="lead">La aplicacion ha sido desarrollada por capas y aplicando en paradigma code first con EntityFramework. 
+        Se utilizo ASP.NET MVC como cliente por defecto para consumir los ASP.NET Web API.
+        La aplicacion esta conformaba por 6 capas, por lo que la hace facil de mantener,
+        aplicar la separacion de responsabilidades y la reutilizacion.
+        A continuacion se describen las capas.
+    </p>
+</div>
+<div class="row">
+    <div class="col-md-2">
+        <h2>WebApi</h2>
+        <p>Esta capa tiene la codificacion de las API REST (ASP.NET Web API) el cual se encuentran en la carpeta RestfulApi.
+            Se aprovecho para construir un cliente por defecto en ASP.NET MVC.
+            La capa depende de las capas Dtos y BusinessLogic.
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h2>BusinessLogic</h2>
+        <p>En esta capa se procesan los datos para la Web Api de tal manera que no se tengan problemas 
+            con referencias circulares que no entiende json pero si EntityFramework. Adicionalmente, si se desean calculos
+            u otras operaciones con los activos, entonces en esta capa se codificarian. 
+            La capa depende de las capas Dtos, Domain y Repository
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h2>Repository</h2>
+        <p>Se utiliza el patron Repository para desacoplar el acceso de datos con la logica de negocio, en nuestro caso entre las capas
+            BusinessLogic y DAL. De esta manera se puede cambiar el Repository sin afectar la DAL.
+            La capa depende de las capas Domain y DAL
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h2>DAL</h2>
+        <p>
+            Se utiliza EntityFramework utilizando el paradigma Code First y se conecta con SQL Server o LocalDB si asi lo prefiere.
+            La capa depende de Domain.
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h2>Domain</h2>
+        <p>
+            Son las entidades utilizadas por la DAL, Repository y BusinessLogic.
+            Estas entidades son las que se crean en la base de datos una vez la aplicacion inicia, siempre y cuando exista
+            un motor de base datos ya sea LocalDB o SQLExpress instalada en la maquina.
+        </p>
+    </div>
+    <div class="col-md-2">
+        <h2>Dtos</h2>
+        <p>
+            Son las entidades que utilia BusinessLogic para mapear contra las entidades Domain respecto a los datos que interesan
+            y eliminar las referencias circulares que no soporta JSON, el cual es contenido que se envia a cualquier cliente que consumira
+            los activos.
+        </p>
+    </div>
+</div>

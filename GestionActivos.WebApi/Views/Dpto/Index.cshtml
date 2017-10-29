@@ -1,0 +1,38 @@
+﻿@model IEnumerable<GestionActivos.Dtos.AreaDto>
+
+@{
+    ViewBag.Title = "Areas";
+}
+
+<h2>Listado de areas</h2>
+
+<p>
+    @Html.ActionLink("Crear una nueva area", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreCiudad)
+        </th>
+    </tr>
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreCiudad)
+        </td>
+    </tr>
+}
+
+</table>

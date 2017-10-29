@@ -3,3 +3,18 @@
 ################################################################################
 
 /.vs
+/GestionActivos.BusinessLogic/bin/Debug
+/GestionActivos.BusinessLogic/obj/Debug
+/GestionActivos.DAL/bin/Debug
+/GestionActivos.DAL/obj/Debug
+/GestionActivos.Domain/bin/Debug
+/GestionActivos.Domain/obj/Debug
+/GestionActivos.Dtos/bin/Debug
+/GestionActivos.Dtos/obj/Debug
+/GestionActivos.Repository/bin/Debug
+/GestionActivos.Repository/obj/Debug
+/GestionActivos.WebApi/obj/Debug
+/GestionActivos.WebApi.Tests/bin/Debug
+/GestionActivos.WebApi.Tests/obj/Debug
+/UnitTestProjectRepository/bin/Debug
+/UnitTestProjectRepository/obj/Debug
