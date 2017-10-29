@@ -3,6 +3,7 @@ using GestionActivos.Dtos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -14,7 +15,7 @@ namespace GestionActivos.WebApi.Controllers
     public class CiudadesController : Controller
     {
         HttpClient client;
-        string url = "http://localhost:50142/api/Ciudad";
+        string url = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiCiudad"]}";
         public CiudadesController()
         {
             client = new HttpClient();

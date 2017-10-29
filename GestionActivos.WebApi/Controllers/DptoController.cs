@@ -3,6 +3,7 @@ using GestionActivos.Dtos;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -14,9 +15,9 @@ namespace GestionActivos.WebApi.Controllers
     public class DptoController : Controller
     {
         HttpClient clientAreas;
-        string urlAreas = "http://localhost:50142/api/Area";
+        string urlAreas = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiArea"]}"; //"http://localhost:50142/api/Area";
         HttpClient clientCiudades;
-        string urlCiudades= "http://localhost:50142/api/Ciudad";
+        string urlCiudades = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiCiudad"]}"; //"http://localhost:50142/api/Ciudad";
         public DptoController()
         {
             InitializeAreas();

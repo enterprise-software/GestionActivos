@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace GestionActivos.WebApi.Controllers
     public class PersonasController : Controller
     {
         HttpClient client;
-        string url = "http://localhost:50142/api/Persona";
+        string url = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiPersona"]}"; //"http://localhost:50142/api/Persona";
         public PersonasController()
         {
             client = new HttpClient();

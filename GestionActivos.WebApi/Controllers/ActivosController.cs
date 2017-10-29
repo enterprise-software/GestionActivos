@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -13,13 +14,13 @@ namespace GestionActivos.WebApi.Controllers
     public class ActivosController : Controller
     {
         HttpClient client;
-        string url = "http://localhost:50142/api/Activo";
+        string url = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiActivo"]}";
         HttpClient clientAreas;
-        string urlAreas = "http://localhost:50142/api/Area";
+        string urlAreas = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiArea"]}";
         HttpClient clientTiposActivo;
-        string urlTiposActivo = "http://localhost:50142/api/TipoActivo";
+        string urlTiposActivo = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiTipoActivo"]}"; 
         HttpClient clientPersonas;
-        string urlPersonas = "http://localhost:50142/api/Persona";
+        string urlPersonas = $"{ConfigurationManager.AppSettings["domainUrlApi"]}{ConfigurationManager.AppSettings["apiPersona"]}";
         public ActivosController()
         {
             InitializeActivos();
